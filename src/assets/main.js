@@ -11,22 +11,39 @@ const getData = async (urlApi) => {
     return data;
 }
 
-const printInfo = (data) => {
-    data.data.forEach(element => {
+const printInfo = (element) => {
         console.log(element);
-        results.innerHTML += `${element.title}`
-    });
+        results.innerHTML += `<div class="card">
+            <div class="container">
+                <img src="${element.images.jpg.image_url}" alt="">
+            </div>
+            <div class="details">
+                <h3>${element.title} - ${element.aired.prop.from.year}</h3>
+                <p>Tipo: ${element.type}</p>
+                <p>Genero: ${element.genres[0].name}</p>
+            </div>
+        </div>`
 
+}
+
+const clearDisplay = () => {
+    results.innerHTML = "";
 }
 
 const getAnimeByName = async (name) => {
+    clearDisplay();
     let data = await getData(`${API}anime?q=${name}`);
-    printInfo(data);
+    data.data.map(element => {
+        printInfo(element);
+    });
 }
 
 const getRandomAnime = async () => {
-    let data = await getData(`${API}random/anime`);
-    console.log(data);
+    clearDisplay();
+    for(let i = 0; i < 5; i++){
+        let data = await getData(`${API}random/anime`);
+        printInfo(data.data);
+    }
 }
 
 buttonForm.addEventListener("click", () => {
