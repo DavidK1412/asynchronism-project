@@ -12,7 +12,6 @@ const getData = async (urlApi) => {
 }
 
 const printInfo = (element) => {
-        console.log(element);
         results.innerHTML += `<div class="card">
             <div class="container">
                 <img src="${element.images.jpg.image_url}" alt="">
@@ -20,7 +19,7 @@ const printInfo = (element) => {
             <div class="details">
                 <h3>${element.title} - ${element.aired.prop.from.year}</h3>
                 <p>Tipo: ${element.type}</p>
-                <p>Genero: ${element.genres[0].name}</p>
+                <p>Genero: ${element.genres[0]?.name}</p>
             </div>
         </div>`
 
