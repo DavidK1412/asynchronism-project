@@ -1,0 +1,20 @@
+{
+  "name": "asynchronism-project",
+  "version": "1.0.0",
+  "description": "Project about my practices on asynchronism.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DavidK1412/asynchronism-project.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DavidK1412/asynchronism-project/issues"
+  },
+  "homepage": "https://github.com/DavidK1412/asynchronism-project#readme"
+}
